@@ -1,0 +1,49 @@
+.bg-body-tertiary {
+    background-color: #48D4CA !important;
+}
+
+
+#logo1{
+    display: block; /* Asegura que la imagen no tenga espacio extra alrededor */
+    max-width: 100%; /* Mantiene la imagen responsiva */
+    
+    
+}
+
+#logo2{
+    width: 300px;
+    display: block; 
+    max-width: 100%; 
+   
+    }
+
+/* elementos del navbar */
+li{
+    font-size: 28px;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style:italic;
+}
+
+li:hover{
+   transition: transform 0.3s ease-in-out; /* smooth animation */
+    text-shadow: 0 0 10px rgba(202, 9, 9, 0.5); /* add a dark shadow */
+  transition: text-shadow 0.3s ease-in-out; /* smooth animation */
+}
+
+button:hover{
+    transform: scale(1.1); /* scale up by 10% */
+    transition: transform 0.3s ease-in-out; /* smooth animation */
+    text-shadow: 0 0 10px rgba(245, 4, 4, 0.5); /* add a dark shadow */
+  transition: text-shadow 0.3s ease-in-out; /* smooth animation */
+}
+    
+
+
+
+/* separacion de elementos navbar */
+.nav-item {
+    margin-left: 3rem;
+    margin-right: 6rem;
+}
+

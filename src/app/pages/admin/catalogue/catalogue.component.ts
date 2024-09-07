@@ -196,7 +196,7 @@ export class CatalogueComponent {
 
   addNewMovie() {
     Swal.fire({
-      title: 'Agregar nuevo vehículo',
+      title: 'Agregar nueva pelicula',
       html: `<div>
               <div>
                 <label class="form-label">Titulo</label>

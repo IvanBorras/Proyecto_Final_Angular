@@ -94,6 +94,30 @@ export class RentComponent implements OnDestroy {
   }
 
   enviarPelicula(): void {
+    const fechaInicio = this.form.value.fechaInicio;
+    const fechaFin = this.form.value.fechaFin;
+
+    if (!fechaInicio || new Date(fechaInicio) < new Date()) {
+        Swal.fire({
+            title: 'Fecha inválida',
+            text: 'La fecha de inicio no puede ser anterior a la fecha actual o estar vacía.',
+            icon: 'error',
+            timer: 2000,
+            showConfirmButton: false
+        });
+        return;
+    }
+
+    if (!fechaFin) {
+        Swal.fire({
+            title: 'Fecha inválida',
+            text: 'La fecha de fin no puede estar vacía.',
+            icon: 'error',
+            timer: 2000,
+            showConfirmButton: false
+        });
+        return;
+    }
     if (this.movie) {
       this.bookingService.saveMovieBooking(this.movie._id, this.form.value.fechaInicio,
         this.form.value.fechaFin, this.numDias * this.movie.pricePerDay).subscribe({
@@ -122,6 +146,30 @@ export class RentComponent implements OnDestroy {
   }
 
   enviarSerie(): void {
+    const fechaInicio = this.form.value.fechaInicio;
+    const fechaFin = this.form.value.fechaFin;
+
+    if (!fechaInicio || new Date(fechaInicio) < new Date()) {
+        Swal.fire({
+            title: 'Fecha inválida',
+            text: 'La fecha de inicio no puede ser anterior a la fecha actual o estar vacía.',
+            icon: 'error',
+            timer: 2000,
+            showConfirmButton: false
+        });
+        return;
+    }
+
+    if (!fechaFin) {
+        Swal.fire({
+            title: 'Fecha inválida',
+            text: 'La fecha de fin no puede estar vacía.',
+            icon: 'error',
+            timer: 2000,
+            showConfirmButton: false
+        });
+        return;
+    }
     if (this.series) {
       this.bookingService.saveSeriesBooking(this.series._id, this.form.value.fechaInicio,
         this.form.value.fechaFin, this.numDias * this.series.pricePerDay).subscribe({

@@ -1,4 +1,12 @@
 <h1>Gestión de Reservas</h1>
+
+<div class="filter-buttons">
+  <button (click)="aplicarFiltro('all')" [class.active]="selectedFilter === 'all'" class="btn btn-secondary">Todas</button>
+  <button (click)="aplicarFiltro('movies')" [class.active]="selectedFilter === 'movies'" class="btn btn-secondary">Películas</button>
+  <button (click)="aplicarFiltro('series')" [class.active]="selectedFilter === 'series'" class="btn btn-secondary">Series</button>
+  <button (click)="aplicarFiltro('current')" [class.active]="selectedFilter === 'current'" class="btn btn-secondary">Reservas actuales</button>
+</div>
+
 @if(bookings.length === 0) {
     <div class="alert alert-warning">
       <i class="fa fa-circle-info"></i>
@@ -19,7 +27,7 @@
         </tr>
       </thead>
       <tbody>
-        @for(booking of bookings; track booking) {
+        @for(booking of filteredBookings; track booking) {
           <tr>
             <td>
               <button [disabled]="!(booking.startDate | canCancel)" (click)="eliminar(booking._id)" class="btn btn-danger btn-sm me-1">

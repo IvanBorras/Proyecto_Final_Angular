@@ -17,11 +17,14 @@ import { CanCancelPipe } from '../../../pipes/can-cancel.pipe';
 })
 export class MyBookingsComponent {
   bookings: Booking[] = [];
+  filteredBookings: Booking[] = [];
+  selectedFilter: string = 'all';
 
   constructor(private bookingService: BookingService, private authService: AuthService){
     this.bookingService.getBookingsByUserId(authService.user!._id).subscribe({
       next: (response)=>{
         this.bookings = response as Booking[]
+        this.filteredBookings = this.bookings;
       },
       error: ()=>{
         Swal.fire({
@@ -33,6 +36,21 @@ export class MyBookingsComponent {
         })
       }
     })
+  }
+
+  aplicarFiltro(filtro: string) {
+    this.selectedFilter = filtro;
+
+    if (filtro === 'all') {
+      this.filteredBookings = this.bookings; 
+    } else if (filtro === 'movies') {
+      this.filteredBookings = this.bookings.filter(booking => booking.movie);
+    } else if (filtro === 'series') {
+      this.filteredBookings = this.bookings.filter(booking => booking.serie);
+    } else if (filtro === 'current') {
+      const today = new Date();
+      this.filteredBookings = this.bookings.filter(booking => new Date(booking.startDate) <= today && new Date(booking.endDate) >= today);
+    }
   }
 
   eliminar(bookingId: string){

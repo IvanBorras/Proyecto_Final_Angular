@@ -16,7 +16,7 @@
               
                 <div class="mb-4">
                     <label class="form-label" for="">Email</label>
-                    <input formControlName="email" class="form-control" type="text" placeholder="example@example.com">
+                    <input formControlName="email" class="form-control" type="email" placeholder="example@example.com">
                 </div>
 
                 <div class="mb-4">
@@ -39,6 +39,13 @@
                     <button class="btn btn-primary"> <i class="fa fa-key"></i> Iniciar Sesión</button>
                 </div>
             </form>
+
+            @if(errorMessage){
+                <div  class="alert alert-danger mt-3">
+                    {{ errorMessage }}
+                </div>
+
+            }
 
 
             <div class="mb-4"> 

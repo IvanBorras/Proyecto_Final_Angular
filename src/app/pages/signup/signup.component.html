@@ -6,17 +6,31 @@
           <h1>Regístrate</h1>
           <form [formGroup]="form" (ngSubmit)="signup()" action="">
 
-            <div class="input-group flex-nowrap">
-              <span class="input-group-text" id="addon-wrapping"><i class="fa-regular fa-user"></i></span>
-              <input formControlName="name" class="form-control" type="text" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping"/>
-            </div>
-          
+           <!-- Campo de Username -->
+           <div class="input-group flex-nowrap mb-3">
+            <span class="input-group-text" id="addon-wrapping"><i class="fa-regular fa-user"></i></span>
+            <input formControlName="name" class="form-control" type="text" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping"/>
+          </div>
 
+          <!-- Mostrar error para el nombre de usuario -->
+          <div class="text-danger">
+          </div>
+
+          @if(form.get('name')?.touched && form.get('name')?.invalid) {
+
+            <small>El nombre es requerido.</small>
+          }
+
+         
+          <!-- Campo de Email --> 
 
             <div class="mb-4">
               <label class="form-label" for="">Email</label>
-              <input formControlName="email" class="form-control" type="text" placeholder="example@example.com" />
+              <input formControlName="email" class="form-control" type="email" placeholder="example@example.com" />
             </div>
+
+                  
+
 
             <div class="mb-4">
               <label class="form-label" for="">Password</label>
@@ -37,6 +51,13 @@
 
             <button class="btn btn-primary"><i class="fa fa-key"></i>Registrarse</button>
           </form>
+
+          @if(errorMessage){
+            <div  class="alert alert-danger mt-3">
+                {{ errorMessage }}
+            </div>
+
+        }
 
           <div class="mb-4"> 
             <p>

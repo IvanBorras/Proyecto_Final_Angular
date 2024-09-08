@@ -37,12 +37,13 @@ git push --set-upstream origin master   ---------> sube tus cambios al repositor
 
 
 //CREAR RAMAS
-Sube tu proyecto original a main, como siempre, después en la terminal pones git checkout -b iss8 (numero del issue creado en GitHub)
-para crear y colocarte en una nueva rama... ya puedes hacer git add comit y push
 
-para cambiar de rama git checkout nombreDeLaRama (main para volver a la principal)
+git checkout -b iss8 (numero del issue creado en GitHub) para crear y colocarte en una nueva rama... ya puedes hacer git add . comit y push
 
-git push -f origin iss20 para subirlo a la rama
+git branch -----> muestra todas las ramas y te indica con * donde te encuentras.
+git checkout nombreDeLaRama ----->para cambiar de rama (main o master para volver a la principal).
+
+git push -f origin iss20 para subirlo a la rama iss20
 
 
 

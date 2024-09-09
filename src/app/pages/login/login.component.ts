@@ -37,7 +37,6 @@ export class LoginComponent {
         const user: User = { token: loginResponse.token, _id: loginResponse.id, role: loginResponse.role}
         console.log(loginResponse);
         this.authService.saveUser(user)
-        // this.router.navigateByUrl("/")
         Swal.fire({
           icon: 'success',
           title: '¡Inicio de sesión exitoso!',

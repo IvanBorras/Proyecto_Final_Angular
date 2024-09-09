@@ -48,10 +48,10 @@ export class UsersComponent implements OnInit {
           next: () => {
             Swal.fire({
               title: "¡Usuario eliminado!",
-              text: "El usuario ha sido eliminado correctamente",
+              text: "El usuario y sus reservas han sido eliminados correctamente",
               icon: "success",
               showConfirmButton: false,
-              timer: 2000
+              timer: 1000
             });
 
             this.users = this.users.filter(x => x._id !== userId);
@@ -62,10 +62,11 @@ export class UsersComponent implements OnInit {
               text: "Ha ocurrido un error",
               icon: "error",
               showConfirmButton: false,
-              timer: 1500
+              timer: 1000
             });
           }
         });
+        
       }
     });
   }

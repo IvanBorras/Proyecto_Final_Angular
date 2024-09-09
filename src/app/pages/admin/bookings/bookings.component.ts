@@ -7,6 +7,7 @@ import { AuthService } from '../../../services/auth.service';
 import Swal from "sweetalert2";
 import { CanCancelPipe } from '../../../pipes/can-cancel.pipe';
 
+
 @Component({
   selector: 'app-bookings',
   standalone: true,
@@ -67,9 +68,10 @@ export class BookingsComponent {
               text: "Tu reserva ha sido eliminada correctamente",
               icon: "success",
               showConfirmButton: false,
-              timer: 2000
+              timer: 1000
             });
 
+            window.location.reload(); // Recargar la página
             this.bookings = this.bookings.filter(x => x._id !== bookingId);
           },
           error: () => {
@@ -78,7 +80,7 @@ export class BookingsComponent {
               text: "Ha ocurrido un error",
               icon: "error",
               showConfirmButton: false,
-              timer: 1500
+              timer: 1000
             });
           }
         });

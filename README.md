@@ -18,32 +18,43 @@ npm install -g @angular/cli@17
 
 
 ## github
-git reset --soft HEAD~1  ----> vuelve a una versión anterior 2,3 
+git reset --soft HEAD~1  ----> vuelve a una versión anterior 2,3.
+
 git stash------> elimina todos los cambios.....
+
 git init ----->     Inicializa un repositorio Git en tu proyecto si aún no lo has hecho.
-git remote add origin url_del_repositorio --------> Asocia tu repositorio remoto de GitHub con tu repositorio local
-git clone ---------> clona el repositorio de github
+
+git remote add origin url_del_repositorio --------> Asocia tu repositorio remoto de GitHub con tu repositorio local.
+
+git clone ---------> clona el repositorio de github.
 
 
-git status ----------> puedo ver las cosas que estan sin actualizar o en la rama en la que estoy
-git remote -v    -----> para ver en que directorio estoy
-git remote set-url origin https://github.com/IvanBorras/Proyecto_React.git --------> para cambiar de repositorio
+
+git status ----------> puedo ver las cosas que estan sin actualizar o en la rama en la que estoy.
+
+git remote -v    -----> para ver en que directorio estoy.
+
+git remote set-url origin https://github.com/IvanBorras/Proyecto_React.git --------> para cambiar de repositorio.
+
 
 
 // ACTUALIZAR PROYECTO
-git add . --------->    Agrega todos los archivos de tu proyecto al área de preparación (staging area) 
-git commit -m "Mensaje descriptivo de tu commit"     -------->  Realiza un commit de tus cambios con un mensaje descriptivo 
-git push --set-upstream origin master   ---------> sube tus cambios al repositorio remoto en GitHub
+git add . --------->    Agrega todos los archivos de tu proyecto al área de preparación (staging area).
+
+git commit -m "Mensaje descriptivo de tu commit"     -------->  Realiza un commit de tus cambios con un mensaje descriptivo. 
+
+git push --set-upstream origin master   ---------> sube tus cambios al repositorio remoto en GitHub.
 
 
 //CREAR RAMAS
 
-git checkout -b iss8 (numero del issue creado en GitHub) para crear y colocarte en una nueva rama... ya puedes hacer git add . comit y push
+git checkout -b iss8 (numero del issue creado en GitHub) para crear y colocarte en una nueva rama... ya puedes hacer git add . comit y push.
 
 git branch -----> muestra todas las ramas y te indica con * donde te encuentras.
+
 git checkout nombreDeLaRama ----->para cambiar de rama (main o master para volver a la principal).
 
-git push -f origin iss20 para subirlo a la rama iss20
+git push -f origin iss20 para subirlo a la rama iss20.
 
 
 

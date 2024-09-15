@@ -5,6 +5,8 @@
   <button (click)="aplicarFiltro('movies')" [class.active]="selectedFilter === 'movies'" class="btn btn-secondary">Películas</button>
   <button (click)="aplicarFiltro('series')" [class.active]="selectedFilter === 'series'" class="btn btn-secondary">Series</button>
   <button (click)="aplicarFiltro('current')" [class.active]="selectedFilter === 'current'" class="btn btn-secondary">Reservas actuales</button>
+  <!-- Botón para eliminar todas las reservas seleccionadas -->
+  <button (click)="eliminarSeleccionados()" class="btn btn-danger" [disabled]="!selectedBookings.length">Eliminar seleccionados</button>
 </div>
 
 @if(bookings.length === 0) {
@@ -16,6 +18,9 @@
     <table class="table">
       <thead>
         <tr>
+          <th scope="col">Check
+            <input type="checkbox" (change)="toggleSelectAll($event)" [checked]="allSelected" /> <!-- Casilla de verificación para seleccionar todas las reservas -->
+          </th>
           <th scope="col"></th>
           <th scope="col">Usuario</th>
           <th scope="col">Email</th>
@@ -29,8 +34,12 @@
       <tbody>
         @for(booking of filteredBookings; track booking) {
           <tr>
+            <td class="checkbox">
+              <!-- Casilla de verificación para seleccionar cada reserva -->
+              <input type="checkbox" (change)="toggleSelection(booking._id, $event)" [checked]="selectedBookings.includes(booking._id)" />
+            </td>
             <td>
-              <button [disabled]="!(booking.startDate | canCancel)" (click)="eliminar(booking._id)" class="btn btn-danger btn-sm me-1">
+              <button [disabled]="!(booking.startDate | canCancel)" (click)="confirmarEliminar(booking._id)" class="btn btn-danger btn-sm me-2">
                 <i class="fa fa-trash"></i>
               </button>
               <button (click)="editar(booking._id)" class="btn btn-primary btn-sm" [disabled]="!(booking.startDate | canCancel)">
@@ -43,8 +52,7 @@
             <td>{{ booking.endDate | formatDate }}</td>
             <td>{{ booking.price}}</td>
             <td>{{ booking.movie && booking.movie.title || ''}}</td>  
-            <td>{{ booking.serie && booking.serie.title || '' }}</td> <!-- verifica si booking.serie no es null o undefined antes de intentar acceder a su propiedad title-->
-            
+            <td>{{ booking.serie && booking.serie.title || '' }}</td> <!-- verifica si booking.serie no es null o undefined antes de intentar acceder a su propiedad title--> 
           </tr>
         }
       </tbody>

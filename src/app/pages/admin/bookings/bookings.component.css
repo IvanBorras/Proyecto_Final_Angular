@@ -7,3 +7,21 @@ td, th {
 h1{
     color: white;
 }
+
+
+.checkbox {
+    width: 4px; /* Ajusta el ancho según lo necesites */
+    text-align: center; /* Centrar el checkbox horizontalmente */
+    vertical-align: middle; /* Centrar el checkbox verticalmente */
+  }
+  
+  .checkbox input[type="checkbox"] {
+    transform: scale(1.2); /* Ajusta el tamaño del checkbox si lo necesitas */
+  }
+  
+
+  table{
+    text-align: center;
+    vertical-align: middle; /* Centrar el checkbox verticalmente */
+
+  }

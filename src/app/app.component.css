@@ -1,0 +1,6 @@
+main.container {
+    width: 100%; /* Haz que ocupe el 100% del ancho disponible */
+    max-width: 1900px; /* Establece un ancho máximo (opcional, ajusta según necesites) */
+    min-height: 100%; /* Establece una altura mínima del 80% de la altura de la ventana */
+  }
+  

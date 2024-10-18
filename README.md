@@ -12,16 +12,11 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 
 
-## instalar angular 
+## INSTALAR ANGULAR 17
 
 npm install -g @angular/cli@17
 
-## poner en produccion 
-
-ng build --configuration production    (te crea una carpeta dist)
-
-
-## github
+## GITHUB
 git reset --soft HEAD~1  ----> vuelve a una versión anterior 2,3.
 
 git stash------> elimina todos los cambios.....
@@ -61,14 +56,26 @@ git checkout nombreDeLaRama ----->para cambiar de rama (main o master para volve
 git push -f origin iss20 para subirlo a la rama iss20.
 
 
-
-
-
-
 la "U" podría indicar que hay archivos no seguimientos (untracked) en tu proyecto, es decir, archivos que Git no está rastreando actualmente. Esto significa que estos archivos no se incluirán en los commits hasta que los agregues al área de preparación (staging area) con el comando git add.
-
-
 
 La "A" podría indicar que hay archivos en tu proyecto que han sido agregados al área de preparación (staging area) pero aún no se han confirmado (commited). Esto significa que estos archivos están listos para ser incluidos en el próximo commit.
 
 Para confirmar estos archivos, normalmente necesitarías realizar un commit en tu repositorio Git. Puedes hacerlo utilizando la interfaz gráfica o ejecutando el comando  git commit -m "Mensaje descriptivo de tu commit"
+
+
+
+## poner en produccion VERCEL
+
+ng build --configuration production    (te crea una carpeta dist donde se encuentra el html)
+esto sera lo q se subira a vercel
+
+asociar github a vercel
+
+al crear nuevo proyecto, elegir el repositorio 
+{
+            Root Directory: ./
+            Build Command: ng build --configuration production
+            Output Directory: dist/cinestream/browser (o el nombre que hayas especificado en angular.json    "outputPath": "dist/cinestream").
+}
+
+en dentro de browser en dist/cinestream/browser se encuentra el html que tiene que leer el navegador.

@@ -79,3 +79,16 @@ al crear nuevo proyecto, elegir el repositorio
 }
 
 en dentro de browser en dist/cinestream/browser se encuentra el html que tiene que leer el navegador.
+
+// URL
+
+Desarrollo: El frontend se ejecuta en http://localhost:4200, y el backend en http://localhost:4040/api/users. ESTO SE ENCUENTRA EN APP/SERVICE/auth.sevice.ts
+Producción: Cambiarás la URL en tu frontend para que apunte a tu backend en Vercel, que es https://cinestreamback.vercel.app/api.
+
+estas urls estan en src/environments
+
+se usara ng serve para desarrollo y ng build para produccion
+
+
+
+(cambiar tambien en los demas services)

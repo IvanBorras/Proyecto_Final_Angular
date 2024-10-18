@@ -3,13 +3,16 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 import { Series } from '../interfaces/series';
+import { environment } from '../../environments/environment';
+
+
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class SeriesService {
-  private url = 'http://localhost:4040/api/series'; 
+  private url: string = `${environment.API_URL}/series`; 
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 

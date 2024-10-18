@@ -3,12 +3,14 @@ import { Injectable } from '@angular/core';
 import { AuthService } from './auth.service';
 import { Observable } from 'rxjs';
 import { Booking } from '../interfaces/booking';
+import { environment } from '../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class BookingService {
-  url: string = 'http://localhost:4040/api/bookings';
+  url: string = `${environment.API_URL}/bookings`; // Usa la variable de entorno
   constructor(private http: HttpClient, private authService: AuthService) {}
 
   getBookingsByUserId(userId: string) {

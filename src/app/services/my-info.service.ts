@@ -3,12 +3,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../interfaces/user';
 import { AuthService } from './auth.service';
+import { environment } from '../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class MyInfoService {
-  private url = 'http://localhost:4040/api/users';
+  private url: string = `${environment.API_URL}/users`;
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 

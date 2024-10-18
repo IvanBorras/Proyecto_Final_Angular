@@ -3,13 +3,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 import { Movie } from '../interfaces/movie';
+import { environment } from '../../environments/environment';
+
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
-  private url = 'http://localhost:4040/api/movies';
+  private url: string = `${environment.API_URL}/movies`;
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 

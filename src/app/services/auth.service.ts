@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../interfaces/user';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,8 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   user: User | null = null;
-  url: string = "http://localhost:4040/api/users";
+  url: string = `${environment.API_URL}/users`; // Usa la variable de entorno
+
   
   constructor(private http: HttpClient, private router: Router) {
     // Rescatar usuario de localStorage

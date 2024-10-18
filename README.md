@@ -16,6 +16,10 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 npm install -g @angular/cli@17
 
+## poner en produccion 
+
+ng build --configuration production    (te crea una carpeta dist)
+
 
 ## github
 git reset --soft HEAD~1  ----> vuelve a una versión anterior 2,3.

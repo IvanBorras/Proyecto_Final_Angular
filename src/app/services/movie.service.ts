@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 import { Movie } from '../interfaces/movie';
-import { environment } from '../../environments/environment';
+import { environment } from '../../environments/environment.prod';
 
 
 
